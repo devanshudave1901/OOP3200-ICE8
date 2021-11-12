@@ -21,7 +21,7 @@ public class Main {
         // input
         // string name
         String name = null;
-        System.out.print("Please Enter your name ");
+        System.out.print("Please Enter your name: ");
         name = keyboard.nextLine(); // input inside the keyboard a string
 
 
@@ -31,7 +31,7 @@ public class Main {
 
         do
         {
-            System.out.println("Please Enter Your age: ");
+            System.out.print("Please Enter Your age: ");
             try
             {
 
@@ -58,13 +58,36 @@ public class Main {
         }
         while(!isValidInput);
 
+
+
+        System.out.println("Multi-Dimensional Array example");
+        int rows = 8;
+        int cols =8;
+        float[][] board = new float[rows][cols];
+
+        for (int x = 0; x < rows; x++)
+        {
+            for (int y = 0; y < cols; y++)
+            {
+                board[x][y] = (float)(Math.random() *100.0f) + 1.0f;
+            }
+        }
+
+
+        System.out.println("Showing 10 Random Values: ");
+
+        for (int i = 0; i < 10; i++)
+        {
+            var randRows = (int)(Math.random() * rows);
+            var randCols= (int)(Math.random() * cols);
+
+            System.out.print("For row: " + randCols + " Col: " + randCols + " ");
+            System.out.printf("Random number is : %.2f \n", board[randRows][randCols]);
+        }
+
         //output
+        System.out.println();
         System.out.printf("\nYou entered: %s \n", name);
         System.out.printf("You Entered: %.2f \n",age);
-
-
-
-
-
     }
 }
